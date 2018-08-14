@@ -1,0 +1,19 @@
+{
+    "name": "liusha/weixin",
+    "description": "weixin SDK",
+    "keywords": ["sdk", "weixin pay"],
+    "authors": [
+        {
+            "name": "liusha",
+            "email": "1209643136@qq.com"
+        }
+    ],
+    "require": {
+      "php": ">=5.5"
+    },
+    "autoload": {
+      "psr-4": {
+        "Weixin": "src/"
+      }
+    }
+}
