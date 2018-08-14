@@ -9,11 +9,11 @@
         }
     ],
     "require": {
-      "php": ">=5.5"
+        "php": ">=5.5"
     },
     "autoload": {
-      "psr-0": {
-        "Weixin": "src/"
-      }
+        "psr-0": {
+            "Weixin": "src/"
+        }
     }
 }
