@@ -34,8 +34,8 @@ class WxPaySdk
     /**
      * 获取jsapi支付参数
      * @param WxPayUnifiedOrder $inputObj
-     * @return Wx\Lib\json数据
-     * @throws Wx\Lib\Base\WxException
+     * @return json数据
+     * @throws WxException
      */
     public static function jsApiPay(WxPayUnifiedOrder $inputObj, WxPayConfigInterface $config)
     {
@@ -47,8 +47,8 @@ class WxPaySdk
     /**
      * 获取扫码支付参数
      * @param WxPayUnifiedOrder $inputObj
-     * @return bool|Wx\Lib\Base\成功时返回
-     * @throws Wx\Lib\Base\WxException
+     * @return 成功时返回
+     * @throws WxException
      */
     public static function NativePay(WxPayUnifiedOrder $inputObj, WxPayConfigInterface $config)
     {
@@ -59,8 +59,8 @@ class WxPaySdk
     /**
      * 获取app支付参数
      * @param WxPayUnifiedOrder $inputObj
-     * @return Wx\Lib\json数据
-     * @throws Wx\Lib\Base\WxException
+     * @return json数据
+     * @throws WxException
      */
     public static function appPay(WxPayUnifiedOrder $inputObj, WxPayConfigInterface $config)
     {
@@ -81,8 +81,8 @@ class WxPaySdk
     /**
      * 刷卡支付
      * @param WxPayMicroPay $inputObj
-     * @return Wx\Lib\返回查询接口的结果
-     * @throws Wx\Lib\Base\WxException
+     * @return 返回查询接口的结果
+     * @throws WxException
      */
     public function microPay(WxPayMicroPay $inputObj, WxPayConfigInterface $config)
     {
@@ -103,8 +103,8 @@ class WxPaySdk
      * 微信退款
      * @param WxPayRefund $inputObj
      * @param WxPayConfig $config
-     * @return Wx\Lib\Base\成功时返回
-     * @throws Wx\Lib\Base\WxException
+     * @return 成功时返回
+     * @throws WxException
      */
     public static function refund(WxPayRefund $inputObj, WxPayConfigInterface $config)
     {
@@ -123,8 +123,8 @@ class WxPaySdk
      * 订单查询
      * @param array $input out_trade_no transaction_id 二选一即可
      * @param WxPayConfig $config
-     * @return Wx\Lib\Base\成功时返回
-     * @throws Wx\Lib\Base\WxException
+     * @return 成功时返回
+     * @throws WxException
      */
     public static function orderQuery(array $input, WxPayConfigInterface $config)
     {
@@ -151,8 +151,8 @@ class WxPaySdk
      * 退款订单查询
      * @param array $input out_trade_no transaction_id 二选一即可
      * @param WxPayConfig $config
-     * @return Wx\Lib\Base\成功时返回
-     * @throws Wx\Lib\Base\WxException
+     * @return 成功时返回
+     * @throws WxException
      */
     public static function refundQuery(array $input, WxPayConfigInterface $config)
     {

@@ -85,7 +85,7 @@ class WxOAuthSdk
         curl_close($ch);
         //取出openid
         $data = json_decode($res,true);
-        if(isset($data['openid']) || empty($data['openid']))
+        if(!isset($data['openid']) || empty($data['openid']))
         {
             throw new WxException("openid 获取失败！");
         }
