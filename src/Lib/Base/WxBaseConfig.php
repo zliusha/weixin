@@ -32,7 +32,7 @@ class WxBaseConfig extends WxPayConfigInterface
     }
     public function SetMerchantId($merchantId)
     {
-        $this->appId = $merchantId;
+        $this->merchantId = $merchantId;
     }
     public  function GetMerchantId()
     {

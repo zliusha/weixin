@@ -13,7 +13,7 @@ class WxConfig
      * 设置支付配置
      * @param array $config
      */
-    public static function init(array $config=[])
+    public static function Init(array $config=[])
     {
         // 配置类
         $baseConfig = new WxBaseConfig();

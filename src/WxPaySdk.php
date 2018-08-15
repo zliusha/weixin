@@ -26,7 +26,7 @@ class WxPaySdk
      * 获取统一下单配置类
      * @return $this
      */
-    public static function getUnifiedOrderObj()
+    public static function InitUnifiedOrderObj()
     {
         return new WxPayUnifiedOrder();
     }
@@ -37,7 +37,7 @@ class WxPaySdk
      * @return json数据
      * @throws WxException
      */
-    public static function jsApiPay(WxPayUnifiedOrder $inputObj, WxPayConfigInterface $config)
+    public static function JsApiPay(WxPayUnifiedOrder $inputObj, WxPayConfigInterface $config)
     {
         $inputObj->SetTrade_type("JSAPI");
         $order = WxPayApi::unifiedOrder($config, $inputObj);
@@ -62,7 +62,7 @@ class WxPaySdk
      * @return json数据
      * @throws WxException
      */
-    public static function appPay(WxPayUnifiedOrder $inputObj, WxPayConfigInterface $config)
+    public static function AppPay(WxPayUnifiedOrder $inputObj, WxPayConfigInterface $config)
     {
         $inputObj->SetTrade_type("APP");
         $order = WxPayApi::unifiedOrder($config, $inputObj);
@@ -74,7 +74,7 @@ class WxPaySdk
      * 获取刷卡支付配置类
      * @return $this
      */
-    public static function getMicroPayObj()
+    public static function GetMicroPayObj()
     {
         return new WxPayMicroPay();
     }
@@ -84,7 +84,7 @@ class WxPaySdk
      * @return 返回查询接口的结果
      * @throws WxException
      */
-    public function microPay(WxPayMicroPay $inputObj, WxPayConfigInterface $config)
+    public function MicroPay(WxPayMicroPay $inputObj, WxPayConfigInterface $config)
     {
         return (new MicroPay($config))->pay($inputObj, 30);
     }
@@ -94,7 +94,7 @@ class WxPaySdk
      * 获取退款配置类
      * @return $this
      */
-    public static function getRefundObj()
+    public static function GetRefundObj()
     {
         return new WxPayRefund();
     }
@@ -106,7 +106,7 @@ class WxPaySdk
      * @return 成功时返回
      * @throws WxException
      */
-    public static function refund(WxPayRefund $inputObj, WxPayConfigInterface $config)
+    public static function Refund(WxPayRefund $inputObj, WxPayConfigInterface $config)
     {
         return WxPayApi::refund($config, $inputObj);
     }
@@ -115,7 +115,7 @@ class WxPaySdk
      * 获取订单查询配置类
      * @return WxPayOrderQuery
      */
-    public static function getOrderQueryObj()
+    public static function GetOrderQueryObj()
     {
         return new WxPayOrderQuery();
     }
@@ -126,7 +126,7 @@ class WxPaySdk
      * @return 成功时返回
      * @throws WxException
      */
-    public static function orderQuery(array $input, WxPayConfigInterface $config)
+    public static function OrderQuery(array $input, WxPayConfigInterface $config)
     {
         $orderQueryObj = self::getOrderQueryObj();
         // 设置第三方商户单号
@@ -143,7 +143,7 @@ class WxPaySdk
      * 获取退款订单查询配置类
      * @return WxPayOrderQuery
      */
-    public static function getRefundOrderQueryObj()
+    public static function GetRefundOrderQueryObj()
     {
         return new WxPayRefundQuery();
     }
@@ -154,7 +154,7 @@ class WxPaySdk
      * @return 成功时返回
      * @throws WxException
      */
-    public static function refundQuery(array $input, WxPayConfigInterface $config)
+    public static function RefundQuery(array $input, WxPayConfigInterface $config)
     {
         $refundQueryObj = self::getRefundOrderQueryObj();
         // 设置第三方商户单号
@@ -175,7 +175,7 @@ class WxPaySdk
      * @param WxPayConfig $config
      * @return bool|WxPayNotifyResults
      */
-    public static function notifyCheck(WxPayConfigInterface $config)
+    public static function NotifyCheck(WxPayConfigInterface $config)
     {
         if (!isset($GLOBALS['HTTP_RAW_POST_DATA']))
         {
@@ -196,7 +196,7 @@ class WxPaySdk
      * @param bool $needSign
      * @throws \WxException
      */
-    public static function notifyReply(bool $reply,string $msg='', $needSign=false, WxPayConfigInterface $config=null)
+    public static function NotifyReply(bool $reply,string $msg='', $needSign=false, WxPayConfigInterface $config=null)
     {
         $replyObj = new WxPayNotifyReply();
         if($reply == false){
