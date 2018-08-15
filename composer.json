@@ -2,6 +2,7 @@
     "name": "weixin-ls/weixin",
     "description": "weixin SDK",
     "keywords": ["sdk", "weixin pay"],
+    "license": "MIT",
     "authors": [
         {
             "name": "liusha",
