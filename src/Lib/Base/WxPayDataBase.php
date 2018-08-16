@@ -60,7 +60,7 @@ class WxPayDataBase
 	{
 		if(!is_array($this->values) || count($this->values) <= 0)
 		{
-    		throw new \WxException("数组数据异常！");
+    		throw new WxException("数组数据异常！");
     	}
     	
     	$xml = "<xml>";

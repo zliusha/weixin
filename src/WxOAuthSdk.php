@@ -28,18 +28,16 @@ class WxOAuthSdk
      *
      * @return 用户的openid
      */
-    public function GetOpenid()
+    public function GetOpenid($code)
     {
         //通过code获得openid
-        if (!isset($_GET['code'])){
+        if (empty($code)){
             //触发微信返回code码
             $baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
             $url = $this->_CreateOauthUrlForCode($baseUrl);
-            Header("Location: $url");
-            exit();
+            return $url;
         } else {
             //获取code码，以获取openid
-            $code = $_GET['code'];
             $openid = $this->getOpenidFromMp($code);
             return $openid;
         }

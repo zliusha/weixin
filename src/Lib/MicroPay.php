@@ -43,7 +43,6 @@ class MicroPay
         if(!array_key_exists("return_code", $result)
             || !array_key_exists("result_code", $result))
         {
-            echo "接口调用失败,请确认是否输入是否有误！";
             throw new WxException("接口调用失败！");
         }
 

@@ -26,7 +26,7 @@ class WxPaySdk
      * 获取统一下单配置类
      * @return $this
      */
-    public static function InitUnifiedOrderObj()
+    public static function GetUnifiedOrderObj()
     {
         return new WxPayUnifiedOrder();
     }
@@ -45,7 +45,7 @@ class WxPaySdk
     }
 
     /**
-     * 获取扫码支付参数
+     * 获取扫码支付参数 支付模式二
      * @param WxPayUnifiedOrder $inputObj
      * @return 成功时返回
      * @throws WxException
@@ -55,7 +55,17 @@ class WxPaySdk
         $inputObj->SetTrade_type("NATIVE");
         return (new NativePay($config))->GetPayUrl($inputObj);
     }
-
+    /**
+     * 获取扫码支付参数 支付模式一
+     * @param WxPayUnifiedOrder $inputObj
+     * @return 成功时返回
+     * @throws WxException
+     */
+    public static function NativePrePay(string $productId, WxPayConfigInterface $config)
+    {
+        $inputObj->SetTrade_type("NATIVE");
+        return (new NativePay($config))->GetPrePayUrl($productId);
+    }
     /**
      * 获取app支付参数
      * @param WxPayUnifiedOrder $inputObj
